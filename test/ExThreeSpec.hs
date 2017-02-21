@@ -17,7 +17,7 @@ spec = do
     it "should return Nothing when k < length list" $ do
       elementAt [1] 2 `shouldBe` Nothing
     it "should be polymorphic" $ do
-      elementAt ['a'..'z'] 24 `shouldBe` Just 'x'
+      elementAt ['a'..'z'] 25 `shouldBe` Just 'y'
 
 elementAt :: [a] -> Int -> Maybe a
 elementAt [] _ = Nothing
