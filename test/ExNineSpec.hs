@@ -1,6 +1,7 @@
 module ExNineSpec (main, spec) where
 
 import Test.Hspec
+import Nine (pack)
 
 main :: IO ()
 main = do
@@ -20,13 +21,4 @@ spec = do
     it "should be polymorphic" $ do
       pack ['a', 'a', 'a', 'a', 'b', 'c', 'c', 'a', 'a', 'd', 'e', 'e', 'e', 'e']
        `shouldBe` ["aaaa","b","cc","aa","d","eeee"]
-
-
-pack :: Eq a => [a] -> [[a]]
-pack xs =
-  case xs of
-    [] ->
-      []
-    x:xs ->
-      (x : takeWhile (==x) xs) : pack (dropWhile (==x) xs)
 
